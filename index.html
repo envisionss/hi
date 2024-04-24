@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Download</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(23, 23, 23);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        button {
+            width: 100px;
+            height: 40px;
+            background-color: #2ecc71;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="downloadFile()">configs</button>
+
+    <script>
+        function downloadFile() {
+            const url = 'https://cdn.discordapp.com/attachments/1209585336775086130/1228232587118379069/New_folder_4_1.zip?ex=6629517c&is=6627fffc&hm=8598dfef18d47a982e01363f8e20501be33455053ac2b9a8ab1a37c34d67ad3a&';
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'New_folder_4_1.zip');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
